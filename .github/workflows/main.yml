@@ -18,12 +18,12 @@ jobs:
 
     - name: List contents
       run: |
+        ls
         ls JavaSE-49.java.io/
-        ls JavaSE-49.java.io/JavaSE-49.java.io/javatest/
+        ls JavaSE-49.java.io/javatest/
 
     - name: Compile and Run Java Files
       run: |
-        cd JavaSE-49.java.io/JavaSE-49.java.io/javatest/
         javac FileCopyExample.java
         java FileCopyExample
       shell: bash
