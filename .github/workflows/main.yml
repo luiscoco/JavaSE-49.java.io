@@ -25,5 +25,5 @@ jobs:
     - name: Debug
       run: |
         ls -R # List all files in the current directory and subdirectories
-        ls -R C:/javatest # List all files in the specific directory
+        ls -R javatest # List all files in the specific directory
       shell: bash
