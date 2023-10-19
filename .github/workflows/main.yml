@@ -19,8 +19,7 @@ jobs:
     - name: List contents
       run: |
         ls
-        ls JavaSE-49.java.io/
-        ls JavaSE-49.java.io/javatest/
+        ls /javatest/
 
     - name: Compile and Run Java Files
       run: |
