@@ -169,3 +169,97 @@ public class ObjectIOExample {
 
 These examples cover different aspects of input and output in Java, including primitive data types, strings, and object serialization.
 
+# More advanced topics related to java.io
+
+## NIO (New I/O)
+
+The java.nio package provides a more scalable and flexible alternative to the traditional I/O classes. It introduces concepts like channels and buffers.
+
+```java
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.io.IOException;
+
+public class NIOExample {
+    public static void main(String[] args) {
+        Path path = Paths.get("nio_example.txt");
+
+        // Writing data using Files and Paths
+        try {
+            Files.write(path, "Hello, NIO!".getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Reading data using Files and Paths
+        try {
+            String content = new String(Files.readAllBytes(path));
+            System.out.println("File Content: " + content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+## ZipInputStream and ZipOutputStream
+
+Used for reading and writing data in ZIP format.
+
+```java
+import java.io.*;
+import java.util.zip.*;
+
+public class ZipExample {
+    public static void main(String[] args) {
+        try (ZipOutputStream zos = new ZipOutputStream(new FileOutputStream("archive.zip"))) {
+            // Add a file to the ZIP archive
+            zos.putNextEntry(new ZipEntry("file.txt"));
+
+            // Write data to the ZIP file
+            byte[] data = "Hello, ZIP!".getBytes();
+            zos.write(data, 0, data.length);
+
+            // Close the entry
+            zos.closeEntry();
+
+            System.out.println("ZIP file created successfully.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+## RandomAccessFile:
+
+Provides a way to read and write data at random positions in a file.
+
+```java
+import java.io.*;
+
+public class RandomAccessFileExample {
+    public static void main(String[] args) {
+        try (RandomAccessFile raf = new RandomAccessFile("random_file.txt", "rw")) {
+            // Write data at a specific position
+            raf.seek(10);
+            raf.writeBytes("RandomAccess");
+
+            // Read data from a specific position
+            raf.seek(5);
+            byte[] buffer = new byte[10];
+            raf.read(buffer);
+
+            System.out.println("Data read: " + new String(buffer));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+These examples touch on more advanced aspects of file handling in Java, such as the NIO package for improved I/O operations, working with ZIP files, and random access to files. 
+
+
