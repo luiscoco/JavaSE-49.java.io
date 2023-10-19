@@ -4,6 +4,10 @@ import java.io.IOException;
 
 public class FileCopyExample {
     public static void main(String[] args) {
+
+        // Print the current directory
+        System.out.println("Current Directory: " + System.getProperty("user.dir"));
+
         try (             
              //These are the paths for Linux operating system
              FileInputStream fis = new FileInputStream("javatest/input.txt");
