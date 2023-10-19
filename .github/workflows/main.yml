@@ -16,6 +16,11 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
+    - name: List contents
+      run: |
+        ls JavaSE-49.java.io/
+        ls JavaSE-49.java.io/javatest/
+
     - name: Compile and Run Java Files
       run: |
         cd JavaSE-49.java.io/javatest/
