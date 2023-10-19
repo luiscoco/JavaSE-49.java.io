@@ -19,7 +19,7 @@ jobs:
     - name: List contents
       run: |
         ls
-        ls /javatest/
+        ls javatest/
 
     - name: Compile and Run Java Files
       run: |
