@@ -88,3 +88,84 @@ public class BufferedFileCopyExample {
 
 These are just a few examples to get you started with java.io. There are many other classes and functionalities in this package, but these should give you a good foundation.
 
+# More samples 
+
+Let's explore a few more examples using different classes from the java.io package:
+
+## DataInputStream and DataOutputStream
+
+Used for reading and writing primitive data types.
+
+```java
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class DataIOExample {
+    public static void main(String[] args) {
+        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("data.dat"));
+             DataInputStream dis = new DataInputStream(new FileInputStream("data.dat"))) {
+
+            // Writing data
+            dos.writeInt(42);
+            dos.writeDouble(3.14);
+            dos.writeUTF("Hello, Java!");
+
+            // Reading data
+            int intValue = dis.readInt();
+            double doubleValue = dis.readDouble();
+            String stringValue = dis.readUTF();
+
+            System.out.println("Int Value: " + intValue);
+            System.out.println("Double Value: " + doubleValue);
+            System.out.println("String Value: " + stringValue);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+## ObjectInputStream and ObjectOutputStream
+
+Used for reading and writing objects.
+
+```java
+import java.io.*;
+
+class Person implements Serializable {
+    String name;
+    int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+public class ObjectIOExample {
+    public static void main(String[] args) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("person.dat"));
+             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("person.dat"))) {
+
+            // Writing object
+            Person person = new Person("John Doe", 25);
+            oos.writeObject(person);
+
+            // Reading object
+            Person restoredPerson = (Person) ois.readObject();
+            System.out.println("Name: " + restoredPerson.name);
+            System.out.println("Age: " + restoredPerson.age);
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+These examples cover different aspects of input and output in Java, including primitive data types, strings, and object serialization.
+
