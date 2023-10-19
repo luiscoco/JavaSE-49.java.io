@@ -2,12 +2,9 @@ import java.io.*;
 
 public class FileCopyExample {
     public static void main(String[] args) {
-        // Print the current directory
-        System.out.println("Current Directory: " + System.getProperty("user.dir"));
-
         // Use absolute paths
-        String sourcePath = System.getProperty("user.dir") + "/javatest/input.txt";
-        String destinationPath = System.getProperty("user.dir") + "/javatest/output.txt";
+        String sourcePath = "/home/runner/work/JavaSE-49.java.io/javatest/input.txt";
+        String destinationPath = "/home/runner/work/JavaSE-49.java.io/javatest/output.txt";
 
         try (InputStream inputStream = new FileInputStream(sourcePath);
              OutputStream outputStream = new FileOutputStream(destinationPath)) {
