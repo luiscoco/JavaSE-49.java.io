@@ -18,6 +18,5 @@ jobs:
 
     - name: Compile and Run Java Files
       run: |
-        javac FileCopyExample.java FileExample.java
-        java FileCopyExample
+        javac FileExample.java
         java FileExample
