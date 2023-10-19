@@ -16,6 +16,9 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
+    - name: List files in the current directory
+      run: ls -R
+
     - name: Navigate to javatest directory
       run: cd javatest
 
