@@ -23,6 +23,6 @@ jobs:
 
     - name: Compile and Run Java Files
       run: |
-        javac FileCopyExample.java
-        java FileCopyExample
+        javac javatest/FileCopyExample.java
+        java -cp . javatest.FileCopyExample
       shell: bash
