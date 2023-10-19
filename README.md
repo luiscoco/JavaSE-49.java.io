@@ -261,6 +261,4 @@ public class RandomAccessFileExample {
 }
 ```
 
-These examples touch on more advanced aspects of file handling in Java, such as the NIO package for improved I/O operations, working with ZIP files, and random access to files. 
-
-
+These examples touch on more advanced aspects of file handling in Java, such as the NIO package for improved I/O operations, working with ZIP files, and random access to files.
