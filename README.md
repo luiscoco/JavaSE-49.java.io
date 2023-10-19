@@ -15,7 +15,7 @@ import java.io.File;
 
 public class FileExample {
     public static void main(String[] args) {
-        File file = new File("example.txt");
+        File file = new File("C:\\javatest\\example.txt");
 
         // Check if the file exists
         if (file.exists()) {
@@ -38,8 +38,8 @@ import java.io.IOException;
 
 public class FileCopyExample {
     public static void main(String[] args) {
-        try (FileInputStream fis = new FileInputStream("input.txt");
-             FileOutputStream fos = new FileOutputStream("output.txt")) {
+        try (FileInputStream fis = new FileInputStream("C:\\javatest\\input.txt");
+             FileOutputStream fos = new FileOutputStream("C:\\javatest\\output.txt")) {
 
             int byteData;
             while ((byteData = fis.read()) != -1) {
@@ -68,8 +68,8 @@ import java.io.IOException;
 
 public class BufferedFileCopyExample {
     public static void main(String[] args) {
-        try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
-             BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\javatest\\input.txt"));
+             BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\javatest\\output.txt"))) {
 
             String line;
             while ((line = reader.readLine()) != null) {
@@ -105,8 +105,8 @@ import java.io.IOException;
 
 public class DataIOExample {
     public static void main(String[] args) {
-        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("data.dat"));
-             DataInputStream dis = new DataInputStream(new FileInputStream("data.dat"))) {
+        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("C:\\javatest\\data.dat"));
+             DataInputStream dis = new DataInputStream(new FileInputStream("C:\\javatest\\data.dat"))) {
 
             // Writing data
             dos.writeInt(42);
@@ -148,8 +148,8 @@ class Person implements Serializable {
 
 public class ObjectIOExample {
     public static void main(String[] args) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("person.dat"));
-             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("person.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("C:\\javatest\\person.dat"));
+             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\javatest\\person.dat"))) {
 
             // Writing object
             Person person = new Person("John Doe", 25);
@@ -182,7 +182,7 @@ import java.io.IOException;
 
 public class NIOExample {
     public static void main(String[] args) {
-        Path path = Paths.get("nio_example.txt");
+        Path path = Paths.get("C:\\javatest\\nio_example.txt");
 
         // Writing data using Files and Paths
         try {
