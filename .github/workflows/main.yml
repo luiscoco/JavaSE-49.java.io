@@ -16,14 +16,11 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
+    - name: Navigate to javatest directory
+      run: cd javatest
+
     - name: Compile and Run Java Files
       run: |
         javac FileExample.java
         java FileExample
-      shell: bash
-
-    - name: Debug
-      run: |
-            ls -R # List all files in the current directory and subdirectories
-            ls -R $GITHUB_WORKSPACE/javatest # List all files in the specific directory
       shell: bash
