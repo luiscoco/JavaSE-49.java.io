@@ -21,4 +21,4 @@ jobs:
         javac FileCopyExample.java
         java FileCopyExample
       shell: bash
-      working-directory: /javatest/
+      working-directory: JavaSE-49.java.io/javatest/
