@@ -18,6 +18,6 @@ jobs:
 
     - name: Compile and Run Java Files
       run: |
-        javac FileExample.java
-        java FileExample
+        javac FileExample.java FileCopyExample.java
+        java FileExample FileCopyExample
       shell: bash
