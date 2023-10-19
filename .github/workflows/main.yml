@@ -18,7 +18,7 @@ jobs:
 
     - name: Compile and Run Java Files
       run: |
-        cd JavaSE-49.java.io/JavaSE-49.java.io/JavaSE-49.java.io/javatest/
+        cd JavaSE-49.java.io/javatest/
         javac FileCopyExample.java
         java FileCopyExample
       shell: bash
