@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class FileCopyExample {
     public static void main(String[] args) {
-        try (FileInputStream fis = new FileInputStream("input.txt");
-             FileOutputStream fos = new FileOutputStream("output.txt")) {
+        try (FileInputStream fis = new FileInputStream("C:\\javatest\\input.txt");
+             FileOutputStream fos = new FileOutputStream("C:\\javatest\\output.txt")) {
 
             int byteData;
             while ((byteData = fis.read()) != -1) {
