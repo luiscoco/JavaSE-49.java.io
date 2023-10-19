@@ -16,12 +16,6 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
-    - name: List files in the current directory
-      run: ls -R $GITHUB_WORKSPACE
-
-    - name: Navigate to javatest directory
-      run: cd $GITHUB_WORKSPACE/path/to/javatest
-
     - name: Compile and Run Java Files
       run: |
         javac FileExample.java
