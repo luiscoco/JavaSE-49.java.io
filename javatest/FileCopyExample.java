@@ -1,7 +1,4 @@
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.file.*;
+import java.io.*;
 
 public class FileCopyExample {
     public static void main(String[] args) {
@@ -9,12 +6,21 @@ public class FileCopyExample {
         System.out.println("Current Directory: " + System.getProperty("user.dir"));
 
         // Use absolute paths
-        Path sourcePath = Paths.get(System.getProperty("user.dir"), "javatest", "input.txt");
-        Path destinationPath = Paths.get(System.getProperty("user.dir"), "javatest", "output.txt");
+        String sourcePath = System.getProperty("user.dir") + "/javatest/input.txt";
+        String destinationPath = System.getProperty("user.dir") + "/javatest/output.txt";
 
-        try {
-            Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
+        try (InputStream inputStream = new FileInputStream(sourcePath);
+             OutputStream outputStream = new FileOutputStream(destinationPath)) {
+
+            byte[] buffer = new byte[1024];
+            int length;
+
+            while ((length = inputStream.read(buffer)) > 0) {
+                outputStream.write(buffer, 0, length);
+            }
+
             System.out.println("File copied successfully.");
+
         } catch (IOException e) {
             e.printStackTrace();
         }
